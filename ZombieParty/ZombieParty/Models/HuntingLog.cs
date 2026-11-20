@@ -6,10 +6,15 @@ namespace ZombieParty.Models
     public class HuntingLog
     {
         public int Id { get; set; }
+
         [StringLength(25, MinimumLength = 5)]
+        [Display(Name = "Title")]
         public string Title { get; set; }
+
         [StringLength(255)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "ValidationRequired")]
         public string Description { get; set; }
+
         public DateTime AdventureDate { get; set; }
 
         [ValidateNever]
